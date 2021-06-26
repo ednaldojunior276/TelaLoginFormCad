@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <style>
+      
+        h1{
+            text-align: center;
+        }
+        #pessoa{
+            width: 300px;
+        }
+        .fd02{
+            width: 500px;
+        }
+        .fd01{
+            width: 700px;
+        }
+        #container{
+            position: absolute;
+            left: 20%;
+            top: 10%;
+        }
+        #div04 {
+            text-align: center;
+            height: 50px;
+        }
+        button{
+            width: 150px;
+            height: 30px;
+            background-color: dodgerblue;
+            border: none;
+            color: black
+        }
+        #formu{
+            background-color: white;
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 20px 20px 20px 20px;
+            box-shadow: 1px 2px 3px black;
+        
+        }
+        body{
+            background-color: cornflowerblue;
+        }
+        #res01 , #res02 , #res03{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div id = "container">
+    
+    <div id = "formu">
+     <h1>CADASTRO DE CLIENTES </h1>
+        <fieldset class="fd01">
+            <legend>PESSOA</legend>
+                  <div id = "div01">
+                    <p>
+                    <input type ="text" name = "nome" id = "pessoa" placeholder="NOME">
+                    Nascimento: <input type = "date" name = "date" id = "date">
+                    Genero: <select>
+                            <option selected value = "01"> Masculino </option>
+                            <option value = "02"> Femenino </option>
+                    </select>
+                </p>
+                <div id = "res01"> </div>
+    </div>  
+     
+    <fieldset class="fd02"> 
+        <legend>CONTATO</legend>      
+            <div id = "div02">
+            <p>
+                <input type="tel" name = "fixo" id = "fixo" placeholder="FIXO">
+                <input type="tel" name = "cel" id = "celular" placeholder="CELULAR">
+            </p>
+            <div id = "res02"> </div>
+    </div>
+    </fieldset>
+    <fieldset class="fd01">
+        <legend>ENDERECO</legend>
+    <div id = "div03">
+        <p>
+            <input type = "number" name = "cep" id = "cep" placeholder="CEP">
+            <input type = "text" name = "cidade" id = "cidade" placeholder="CIDADE">
+            <input type = "text" name = "bairro" id = "endereco" placeholder="BAIRRO">
+            </br>
+            </br>
+            <input type = "text" name = "rua" id = "rua" placeholder="NOME DA RUA">
+            <input type = "number" name = "numero" id = "num" placeholder="NUM">
+            <input type = "text" name = "complemento" id = "complemento" placeholder="COMPLEMENTO">    
+        </p>
+        <div id = "res03"> 
+        </div>
+    </fieldset>
+
+<div id = "div04">
+        <p>
+            <button onclick="salvar()">Salvar</button>
+            <button onclick="limpar()">Cancelar</button>
+        </p>
+    </div>
+</fieldset> 
+</div>
+</div>
+
+
+<script>
+
+function salvar(){
+
+    function pessoa(){
+        let res01 = document.querySelector("#res01");
+        let nome =document.getElementById("pessoa").value
+        let data =document.getElementById("date")
+           
+            let dt = Number(data.value);
+            if(nome.length == " " && dt == " "){
+            res01.innerHTML = "Preencha os campos" 
+            }    
+            else if (nome.length == " "){
+                res01.innerHTML = "Preencha o campo nome" 
+
+            }
+            else if(dt == " "){
+                res01.innerHTML = "Preencha a data" 
+            }
+    }
+pessoa()
+
+function contato(){
+    let res02 = document.querySelector("#res02")
+    let fixo = document.querySelector("#fixo")
+    let celular = document.querySelector("#celular");
+
+        if(fixo.value.length == " " && celular.value.length == " "){
+            res02.innerHTML = "Preencha os campos"
+        }
+        else if(fixo.value.length == " "){
+            res02.innerHTML = "Preencha o compo fixo"
+
+        }
+        else if(celular.value.length == " "){
+            res02.innerHTML = "Preencha o compo celular"
+
+     }
+}
+contato()
+
+function endereco() {
+    let res03 = document.querySelector("#res03")
+    let cep = document.querySelector("#cep");
+    let cidade = document.querySelector("#cidade");
+    let bairro = document.querySelector("#bairro");
+
+    let rua = document.querySelector("#rua");
+    let num = document.querySelector("#num");
+    let complemento = document.querySelector("#complemento");
+
+        if(cep.value.length == " " && cidade.value.length == " "){
+            res03.innerHTML = "Preencha os campos"
+
+        }
+        else if(bairro.value.length == " " && rua.value.length == " "){
+            res03.innerHTML = "Preencha os campos"
+        }
+        else if(num.value.length == " " && complemento.value.length == " "){
+            res03.innerHTML = "Preencha os campos"
+        }
+      
+}
+
+endereco()
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
