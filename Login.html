@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TelaLogin</title>
+<style>
+.container{
+    border: 1px solid black;
+    border-radius: 20px 0px 20px 0px;
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    text-align: center;
+    padding: 20px;
+    background-color:  white;
+    
+    
+  
+}
+body {
+    background-color: cornflowerblue;
+}
+input{
+    height: 30px;
+    width: 300px;
+    font-size: 10pt;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 12pt;
+}
+button{
+    height: 30px;
+    width: 200px;
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+
+}
+#trans{
+    transition: 1s;
+}
+
+</style>
+
+</head>
+<body>
+    
+
+   <div class = "container"> 
+        <figure>
+            <img src = "fotos/lg.jpg" id = "im">
+        </figure>
+        <p> <input type="email" name = "email" id = "email" placeholder = "Digite o seu email"></p>
+        <p> <input type="password" name = "senha" id = "senha" placeholder = "Digite a sua senha"></p>
+        <p><button onclick = "entrar()">Login</button></p>
+        <p>Ainda não tem uma conta ?</p>
+        <p id = "trans"><a href="file:///C:/Users/ednal/Desktop/login/Cadastro.html">Cadastre-se!</a></p>
+   <div>
+
+<script>
+
+    function entrar(){
+
+        function entrada(){
+        let email = document.querySelector("#email").value
+        let senha = document.querySelector("#senha")
+        let s = Number(senha.value)
+
+        if(email.length == " " && s == " "){
+            alert("PREENCHA OS CAMPOS VAZIO");
+        }
+        else if(email.length == " "){
+            alert("COMPO DE EMAIL NÃO ESTÁ PREENCHIDO");
+        }
+        else if(s == " "){
+            alert("COMPO DE SENHA NÃO PREENCHIDO");
+
+        }
+    }
+    entrada()
+
+}
+
+</script>
+
+</body>
+</html>
